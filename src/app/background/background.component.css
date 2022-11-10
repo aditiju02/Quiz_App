@@ -1,0 +1,19 @@
+
+  .themebut{
+    margin-top: 60px;
+    background-color: rgb(33, 43, 132);
+    color: white;
+    border-color:rgb(33, 43, 132);
+    border: 2px;
+    border-style: solid;
+  }
+
+  .themebut:hover{
+    margin-top: 60px;
+    color: rgb(33, 43, 132);
+    background-color: white;
+    border-color:rgb(33, 43, 132);
+    border: 2px;
+    border-style: solid;
+    cursor: pointer;
+  }

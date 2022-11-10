@@ -1,0 +1,81 @@
+ <div ng-app="myApp">
+ <div class="modal" id="SigninModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Sign In here.</p>
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail2" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword2" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn" style="background-color: rgb(33, 43, 132); color: white">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="SignupModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Sign Up to create a Quiz.</p>
+        <form>
+          <div class="mb-3">
+            <label for="exampleName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputconfirmPassword1" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="cpassword" />
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button> 
+
+          <a type="submit" id="submit" routerLink="/signup" style="margin-top: 2px; " class="btn themebut">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

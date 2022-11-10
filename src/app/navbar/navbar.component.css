@@ -1,0 +1,17 @@
+
+  .themebut{
+    background-color: rgb(33, 43, 132);
+    color: white;
+    border-color:rgb(33, 43, 132);
+    border-width: 5px;
+    border: 5px;
+  }
+
+  .themebut:hover{
+    color: rgb(33, 43, 132);
+    background-color: #bae2fc;
+    border-color:rgb(33, 43, 132);
+    border: 2px;
+    border-style: solid;
+    cursor: pointer;
+  }
