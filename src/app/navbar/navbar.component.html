@@ -6,13 +6,16 @@
       </a>
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" aria-current="page" routerLink="/home">Home</a>
         </li>
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="more_quiz.html">More Quiz</a>
+          <a class="nav-link" aria-current="page" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/contact_us">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/more-quiz">More Quiz</a>
         </li>
         <li class="nav-item">
           <button class="btn themebut" data-bs-toggle="modal" data-bs-target="#SigninModal">
@@ -22,3 +25,4 @@
       </ul>
     </div>
   </nav>
+  <router-outlet></router-outlet>

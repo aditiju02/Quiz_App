@@ -43,14 +43,14 @@
       </div>
       <div class="modal-body">
         <p>Sign Up to create a Quiz.</p>
-        <form>
+        <form (ngSubmit)="onSubmit()" action="sign_up" method="post">
           <div class="mb-3">
             <label for="exampleName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" />
+            <input type="text" class="form-control" [(ngModel)]='name' name="name" id="name" />
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+            <input type="email" class="form-control" [(ngModel)]='email' name="email" id="email" aria-describedby="emailHelp" />
             <div id="emailHelp" class="form-text">
               We'll never share your email with anyone else.
             </div>
@@ -58,12 +58,12 @@
 
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" />
+            <input type="password" [(ngModel)]='password' class="form-control" id="password" />
           </div>
 
           <div class="mb-3">
             <label for="exampleInputconfirmPassword1" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="cpassword" />
+            <input type="password" class="form-control" id="cpassword" [(ngModel)]='cpassword' />
           </div>
 
         </form>
@@ -73,9 +73,10 @@
           Close
         </button> 
 
-          <a type="submit" id="submit" routerLink="/signup" style="margin-top: 2px; " class="btn themebut">Sign Up</a>
+          <a type="submit" id="submit" href="../createquiz/" style="margin-top: 2px; " class="btn themebut">Sign Up</a>
       </div>
     </div>
   </div>
 </div>
 </div>
+<router-outlet></router-outlet>
