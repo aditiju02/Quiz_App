@@ -17,7 +17,7 @@ export class OptionComponent implements OnInit {
 
   onClick(opt: Option){
     this.optDel.emit(opt);
-    console.log("Onclick has been triggered.");
+    console.log("Onclick has been triggered for option.");
   }
 
 }

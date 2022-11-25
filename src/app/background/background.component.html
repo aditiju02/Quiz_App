@@ -14,10 +14,14 @@
                         With supporting text below as a natural lead-in to additional
                         content.
                     </p>
-                        <button class="btn themebut" data-bs-toggle="modal"
-                            data-bs-target="#SignupModal">
+                        <!-- <a class="btn themebut"  data-bs-target="#SignupModal"
+                            href="../signupmodal/">
                             Sign Up
-                        </button>
+                </a> -->
+                        <a class="btn themebut" data-bs-toggle="modal"
+                            routerLink="../signupmodal/">
+                            Sign Up
+                </a>
                 </div>
             </div>
         </div>
@@ -29,11 +33,17 @@
                         With supporting text below as a natural lead-in to additional
                         content.
                     </p>
+                    <form (submit)= "entercode($event)">
                     <input type="text" class="form-control" id="code" placeholder="Enter Code" />
-                    <br />
-                    <button class="btn themebut" style="margin-top: 0px">Attempt</button>
+                    <br/>
+                    <button type="submit" class="btn themebut" style="margin-top: 0px">Attempt</button>
+                    <!-- <a class="btn themebut" style="margin-top: 0px"
+                    routerLink="/attempt">
+                    Attempt</a> -->
+    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<router-outlet></router-outlet>

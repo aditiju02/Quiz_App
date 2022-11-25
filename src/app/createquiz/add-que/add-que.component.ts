@@ -17,14 +17,16 @@ export class AddQueComponent implements OnInit {
   type:string;
   ansno: number;
   option_arr: Option[]=[];
-  quiz_name: string;
-  // quiz_dup=quiz;
-  @Output() quiz: Question[];
   @Output() queAdd: EventEmitter<Question> = new EventEmitter();
-  @Input() opt: Option;
+  // @Input() opt: Option;
+  @Input() quiz: Question[];
+  // @Output() sendQuiz: EventEmitter<Question[]> = new EventEmitter();
+
+
   constructor() { 
     this.localItem = localStorage.getItem("option_arr");
   }
+
 
   ngOnInit(): void {
   }
@@ -38,6 +40,12 @@ export class AddQueComponent implements OnInit {
     console.log(this.option_arr);
   }
 
+  // sendquiz(quiz: Question[])
+  // {
+  //     console.log(quiz);
+  //     console.log("Quiz from add que");
+  // }
+
   deleteOpt(opt:Option){
     console.log(opt);
     const index = this.option_arr.indexOf(opt);
@@ -50,6 +58,7 @@ export class AddQueComponent implements OnInit {
     const index = this.quiz.indexOf(que);
     this.quiz.splice(index, 1);
     localStorage.setItem("quiz", JSON.stringify(this.quiz));
+    console.log("The question has been deleted");
   }
 
     onSubmit():
@@ -71,6 +80,8 @@ export class AddQueComponent implements OnInit {
         active: true
       }
 
+      console.log("This is quiz from add que");
+      console.log(this.quiz);
       console.log(question);
     this.queAdd.emit(question);
   }

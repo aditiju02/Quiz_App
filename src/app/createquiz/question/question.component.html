@@ -1,14 +1,15 @@
-<div class="my-3">
-    <h4>Question: {{que.que}}</h4>
-    <!-- <p>{{que.type}}</p> -->
+<div class="">
+    <h5 style="margin-bottom: 30px">Q. {{que.sno}} {{que.que}}</h5>
     <div *ngIf=" que.type=='Options';">
         <div *ngFor="let op of que.option_arr; index as i">
-        <p>Options: {{i+1}}. {{op.opt}}</p>
+        <p>{{i+1}}. {{op.opt}}</p>
     </div>
     </div>
-    <p>Answer: {{que.ans}}</p>
-
-    <!-- <div *ngIf="; else elseBlock">Content to render when condition is true.</div>
-<ng-template #elseBlock>Content to render when condition is false.</ng-template> -->
-    <button class="btn btn-danger" (click)="onClick(que)">Remove</button>
+    <div class="row">
+    <p class="col" style="margin-top: 30px">Answer: {{que.ans}}</p>
+    <div class="col justify-content-end">
+    <button class="btn btn-danger btn-sm" (click)="onClick(que)">Remove</button>
+</div>
+</div>
+    <hr>
 </div>

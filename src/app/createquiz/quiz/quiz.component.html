@@ -2,6 +2,19 @@
 <input [(ngModel)]="quiz_name" name="quiz_name" id="quiz_name">
 <h4>{{quiz_name}}</h4> -->
 
+<form (submit)= "addQuiz($event)">
+  <input style="margin-bottom: 20px" placeholder="Enter Quiz Name" name="quiz_name" id="quiz_name" required>
+  <button >Add Quiz</button>
+  <input value="Code" name="code" id="code" required>
+  </form>
 
-<app-add-que (queAdd)="addQue($event)">
+<app-add-que [quiz]="quiz" (queAdd)="addQue($event)">
 </app-add-que>
+<!-- <div>
+    <div *ngIf="this.quiz.length==0; else elseBlock">No questions.</div>
+    <ng-template #elseBlock>
+      <div *ngFor="let que of quiz; index as i">
+        <app-question [que]="que" [i]="i" (queDelete)="deleteQue($event)"></app-question>
+      </div>
+    </ng-template>
+  </div> -->

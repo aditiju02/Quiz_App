@@ -1,176 +1,16 @@
-<!-- <h4>Add a Question.</h4>
-<form (ngSubmit)="onSubmit()" class="row g-9">
-  <div class="col-6">
- -->
-
-
-<!-- <div class="col-auto"> -->
-
-
-
-<!--       
-    <label for="Question" class="form-label">Question</label>
-
-    <input type="text" [(ngModel)]="que" class="form-control" id="que" name="que" aria-describedby="emailHelp">
-  </div>
-  <div class="row g-3"> -->
-
-
-
-
-<!-- <div class="mt-2 col-md-6"> -->
-
-
-
-
-<!-- <div class="col-auto">
-      <label for="type" class="form-label">Question Type</label>
-      <select [(ngModel)]="type" id="type" class="form-select" name="type">
-        <option selected>--</option>
-        <option>Text</option>
-        <option>Options</option>
-        <option>Numeric</option>
-        <option>Multiple Choice</option>
-      </select>
-    </div>
-    <ng-container *ngIf=" type=='Text'; else second">
-      <div class="col-auto">
-        <label for="answer" class="form-label">Answer</label>
-        <input type="text" class="form-control" id="ans" name="ans" [(ngModel)]="ans">
-      </div>
-    </ng-container>
-    <ng-template #second>
-      <ng-container *ngIf=" type=='Options'; else third">
-
-        <app-add-opt (optAdd)="addopt($event)"></app-add-opt>
-        <div *ngFor="let opt of option_arr">
-          <app-option [opt]="opt"></app-option>
-        </div>
-
-        <label for="answer" class="form-label">Answer</label>
-        <input type="number" class="form-control" id="ans" name="ans" [(ngModel)]="ansno">
-
-      </ng-container>
-    </ng-template>
-    <ng-template #third>
-      <ng-container *ngIf="type==='Numeric';else fourth">
-        <label for="answer" class="form-label">Answer</label>
-        <input type="number" class="form-control" id="ans" name="ans" [(ngModel)]="ans">
-      </ng-container>
-    </ng-template>
-    <ng-template #fourth>
-      <ng-container *ngIf="type==='Multiple Choice';">
-        <label for="answer" class="form-label">Answer</label>
-        <input type="text" class="form-control" id="ans" name="ans" [(ngModel)]="ans">
-      </ng-container>
-    </ng-template>
-    <div class="col-auto" style="margin-top: 50px">
-      <button type="submit" class="btn btn-primary">Add Question</button>
-    </div>
-  </div>
-</form>
- -->
-
-
-
-
-
-<section class="h-100 h-custom gradient-custom-2">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
+<section style="margin-top: 50px;" class="h-100 h-custom gradient-custom-2 p-5">
+  <div class="container" style="margin-top: 20px">
+    <div class="row d-flex justify-content-center align-items-center">
+      <h3 style="color:aliceblue">Create your Quiz</h3>
       <div class="col-12">
         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
           <div class="card-body p-0">
             <div class="row g-0">
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <h3 class="fw-normal mb-5" style="color: #4835d4;">{{quiz_name}}</h3>
 
-                  <div class="mb-4 pb-2">
-                    <select class="select">
-                      <option value="1">Title</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                      <option value="4">Four</option>
-                    </select>
-                  </div>
 
-                  <div class="row">
-                    <div class="col-md-6 mb-4 pb-2">
-
-                      <div class="form-outline">
-                        <input type="text" id="form3Examplev2" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplev2">First name</label>
-                      </div>
-
-                      <div *ngFor="let opt of option_arr">
-                        <app-option [opt]="opt" (optDel)="deleteOpt($event)"></app-option>
-                      </div>
-
-                    </div>
-                    <div class="col-md-6 mb-4 pb-2">
-
-                      <div class="form-outline">
-                        <input type="text" id="form3Examplev3" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplev3">Last name</label>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div>
-                    <div *ngIf="this.quiz.length===0; else elseBlock">No questions.</div>
-                    <ng-template #elseBlock>
-                      <div *ngFor="let que of quiz; index as i">
-                        <app-question [que]="que" [i]="i" (queDelete)="deleteQue($event)"></app-question>
-                      </div>
-                    </ng-template>
-                  </div>
-
-                  <div class="mb-4 pb-2">
-                    <select class="select">
-                      <option value="1">Position</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                      <option value="4">Four</option>
-                    </select>
-                  </div>
-
-                  <div class="mb-4 pb-2">
-                    <div class="form-outline">
-                      <input type="text" id="form3Examplev4" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplev4">Position</label>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
-
-                      <div class="form-outline">
-                        <input type="text" id="form3Examplev5" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplev5">Bussines Arena</label>
-                      </div>
-
-                    </div>
-                    <div class="col-md-6">
-
-                      <select class="select">
-                        <option value="1">Employees</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                      </select>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
               <div class="col-lg-6 bg-indigo text-white">
                 <div class="p-5">
                   <h3 class="fw-normal mb-5">Add your quiz</h3>
-                  <input style="margin-bottom: 20px" [(ngModel)]="quiz_name" placeholder="Enter Quiz Name"
-                    name="quiz_name" id="quiz_name">
-
                   <form (ngSubmit)="onSubmit()">
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
@@ -179,21 +19,8 @@
                         <label class="form-label" for="form3Examplea2">Add Question</label>
                       </div>
                     </div>
-
-                    <!-- <div class="mb-4 pb-2">
-                    <div class="form-outline form-white">
-                      <input type="text" id="form3Examplea3" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplea3">Additional Information</label>
-                    </div>
-                  </div> -->
-
                     <div class="row">
                       <div class="col-md-5 mb-4 pb-2">
-
-                        <!-- <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea4" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea4">Zip Code</label>
-                      </div> -->
                         <div class="form-outline form-white">
                           <select [(ngModel)]="type" id="type" class="form-select form-control" name="type">
                             <option selected>--</option>
@@ -207,7 +34,6 @@
                       </div>
 
                       <div class="col-md-7 mb-4 pb-2">
-                        <!--  -->
                         <ng-container *ngIf=" type=='Text'; else second">
                           <div class="form-outline form-white">
                             <input type="text" class="form-control" id="ans" name="ans" [(ngModel)]="ans">
@@ -218,7 +44,6 @@
                           <ng-container *ngIf=" type=='Options'; else third">
 
                             <app-add-opt (optAdd)="addopt($event)"></app-add-opt>
-                            <!-- <div class="mb-3 form-outline form-white"> -->
                             <span class="mb-4 pb-2">
                               <input type="number" class="form-control" placeholder="Option number" id="ans" name="ans"
                                 [(ngModel)]="ansno">
@@ -242,17 +67,6 @@
                             </div>
                           </ng-container>
                         </ng-template>
-                        <!--  -->
-
-
-                        <!-- 
-
-                        <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea5" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea5">Place</label>
-                        </div>
-
-                       -->
                       </div>
                     </div>
 
@@ -261,6 +75,13 @@
                   </form>
                 </div>
               </div>
+
+              <div class="col-lg-6">
+                <div class="p-5">
+              <p>Total no. of questions</p>
+            </div>
+          </div>
+            
             </div>
           </div>
         </div>
@@ -268,3 +89,30 @@
     </div>
   </div>
 </section>
+
+<div class="container col-lg-6">
+  <div class="p-5">
+    <!-- <h3 class="fw-normal mb-5" style="color: #4835d4;">{{quiz_name}}</h3> -->
+    <div class="row">
+      <div class="col-md-6 mb-4 pb-2">
+
+        <div *ngFor="let opt of option_arr">
+          <app-option [opt]="opt" (optDel)="deleteOpt($event)"></app-option>
+        </div>
+
+      </div>
+      <div class="col-md-6 mb-4 pb-2">
+      </div>
+    </div>
+    <div>
+      <div *ngIf="this.quiz.length==0; else elseBlock">No questions.</div>
+      <ng-template #elseBlock>
+        <div *ngFor="let que of quiz; index as i">
+          <app-question [option_arr]="option_arr" [que]="que" [i]="i" (queDelete)="deleteQue($event)"></app-question>
+          <br>
+        </div>
+      </ng-template>
+    </div>
+
+  </div>
+</div>

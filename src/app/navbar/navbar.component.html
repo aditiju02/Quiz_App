@@ -18,9 +18,15 @@
           <a class="nav-link" routerLink="/more-quiz">More Quiz</a>
         </li>
         <li class="nav-item">
-          <button class="btn themebut" data-bs-toggle="modal" data-bs-target="#SigninModal">
+          <div *ngIf="auth.isLoggedIn == true ;else elseBlock">
+          <a class="btn themebut" data-bs-toggle="modal" routerLink="../signinmodal/">
             Sign In
-          </button>
+          </a>
+        </div>
+        <ng-template #elseBlock>
+          <a class="btn themebut" routerLink="../logout/">
+          Logout
+        </a></ng-template>
         </li>
       </ul>
     </div>

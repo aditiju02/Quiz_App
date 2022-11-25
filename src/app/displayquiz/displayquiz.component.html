@@ -1,0 +1,68 @@
+
+<div class="container back">
+  <div class="container col-9 card justify-content-center" style="padding: 100px; height: 450px">
+<div class="top-section">
+    <p-button label="Submit" (click)="submitQuiz()"></p-button>
+  </div>
+  <div class="question-section">
+    <p-dialog
+      header="QuizME"
+      [modal]="true"
+      [(visible)]="submitConfirm"
+      [style]="{ width: '50vw' }"
+      [baseZIndex]="10000"
+    >
+      {{ confirmationContent }}
+      <p-footer>
+        <button
+          type="button"
+          pButton
+          icon="pi pi-check"
+          (click)="onYes()"
+          label="Yes"
+        ></button>
+        <button
+          type="button"
+          pButton
+          icon="pi pi-times"
+          (click)="submitConfirm = false"
+          label="No"
+          class="ui-button-secondary"
+        ></button>
+      </p-footer>
+    </p-dialog>
+  
+    <p-fieldset legend="Question-{{ questionNo + 1 }}">
+      <div class="p-grid" style="margin-bottom: 50px">
+        <h3>{{ quiznow[questionNo].que}}</h3>
+        <div class="p-col-12" *ngFor="let o of quiznow[questionNo].option_arr">
+          <p-radioButton
+            name="answers"
+            [value]="o.opt"
+            [label]="o.opt"
+            [(ngModel)]="quiznow[questionNo].selectedAnswer"
+            inputId="opt1"
+          ></p-radioButton>
+        </div>
+      </div>
+    </p-fieldset>
+  </div>
+  
+  <div class="nav-section">
+    <p-button
+      label="Prev"
+      icon="pi pi-chevron-left"
+      iconPos="left"
+      (click)="prevQuestion()"
+    ></p-button>
+  
+    <p-button
+      label="Next"
+      icon="pi pi-chevron-right"
+      iconPos="right"
+      (click)="nextQuestion()"
+    ></p-button>
+  </div>
+</div>
+</div>
+  
